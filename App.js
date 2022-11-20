@@ -43,7 +43,14 @@ const ProfileScreen = ({ navigation, route }) => {
 const App = () => {
   return (
     <NavigationContainer>
-
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'THEApp' }}
+        />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
