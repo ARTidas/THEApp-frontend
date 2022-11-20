@@ -7,6 +7,7 @@ import {
   Component, TouchableOpacity
 } from 'react-native';
 import styles from './App.style.js';
+import { LoginPage } from './pages/login.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,31 +26,33 @@ const MyStack = () => {
   );
 };
 
-const HomeScreen = ({ navigation }) => {
+const HomePage = ({ navigation }) => {
   return (
     <Button
-      title="Go to Jane's profile"
+      style={styles.buttonInput}
+      title="Bejelentkezés"
       onPress={() =>
-        navigation.navigate('Profile', { name: 'Jane' })
+        navigation.navigate('Bejelentkezés', { name: 'Jane' })
       }
     />
   );
 };
 
-const ProfileScreen = ({ navigation, route }) => {
-  return <Text>This is {route.params.name}'s profile</Text>;
-};
+
 
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="HomePage"
+          component={ HomePage }
           options={{ title: 'THEApp' }}
         />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen
+          name="Bejelentkezés"
+          component={ LoginPage }
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
