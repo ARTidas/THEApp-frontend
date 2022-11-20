@@ -10,53 +10,41 @@ import styles from './App.style.js';
 
 const Stack = createNativeStackNavigator();
 
-const App = () => {
-  const [user_email, setUserEmail] = useState('');
-  const [user_password, setUserPassword] = useState('');
-
+const MyStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={ HomeScreen }
+          component={HomeScreen}
           options={{ title: 'Welcome' }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    <View style={styles.container}>
-      <StatusBar style="auto" />
+  );
+};
 
-      <Text style={styles.titleText}>THEApp</Text>
+const HomeScreen = ({ navigation }) => {
+  return (
+    <Button
+      title="Go to Jane's profile"
+      onPress={() =>
+        navigation.navigate('Profile', { name: 'Jane' })
+      }
+    />
+  );
+};
 
-      <TextInput
-        style={styles.textInput}
-        placeholder="E-mail cím"
-        onChangeText={(user_email) => setUserEmail(user_email)}
-      />
-      <TextInput
-        style={styles.textInput}
-        secureTextEntry={true}
-        autoCapitalize="none"
-        autoCorrect={false}
-        enablesReturnKeyAutomatically
-        placeholder="Jelszó"
-        autoComplete="password"
-        onChangeText={(user_password) => setUserPassword(user_password)}
-      />
+const ProfileScreen = ({ navigation, route }) => {
+  return <Text>This is {route.params.name}'s profile</Text>;
+};
 
-      <TouchableOpacity style={styles.buttonInput}>
-        <Text>Bejelentkezés</Text>
-      </TouchableOpacity>
+const App = () => {
+  return (
+    <NavigationContainer>
 
-      <TouchableOpacity style={styles.link}>
-        <Text>Elfelejtett jelszó?</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.link}>
-        <Text>Nincs fiókod? Regisztráció</Text>
-      </TouchableOpacity>
-    </View>
+    </NavigationContainer>
   );
 };
 
