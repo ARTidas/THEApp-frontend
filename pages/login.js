@@ -30,10 +30,16 @@ export const LoginPage = ({ navigation, route }) => {
         <Text>Bejelentkezés</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.link}>
+      <TouchableOpacity
+        style={styles.link}
+        onPress={ () => navigation.navigate('Elfelejtett jelszó') }
+      >
         <Text>Elfelejtett jelszó?</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.link}>
+      <TouchableOpacity
+        style={styles.link}
+        onPress={ () => navigation.navigate('Regisztráció') }
+      >
         <Text>Nincs fiókod? Regisztráció</Text>
       </TouchableOpacity>
     </View>

@@ -50,5 +50,24 @@ export default StyleSheet.create({
     padding: 5,
     alignItems: "center",
     justifyContent: "center"
+  },
+  element: {
+    backgroundColor: '#ccc',
+  },
+  stackNavigator: {
+    backgroundColor: '#ccc',
+    color: '#ccc'
+  },
+  navigation: {
+    backgroundColor: '#ccc',
+    color: '#000',
+    borderColor: '#fff',
+    borderWidth: 1,
+    padding: 5,
+    justifyContent: "center",
+    height: 40,
+    //fontWeight: 'bold',
+    justifyContent: "center",
+    fontSize: 20,
   }
 });
