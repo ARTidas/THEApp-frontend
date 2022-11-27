@@ -33,6 +33,15 @@ export const HomePage = ({ navigation }) => {
         <Text style={styles.navigation}>Elfelejtett jelszó</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        title="Profil"
+        style={styles.navigation}
+        onPress={() =>
+          navigation.navigate('Profil')
+        }
+      >
+        <Text style={styles.navigation}>Profil</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
         title="Teszt"
         style={styles.navigation}
         onPress={() =>

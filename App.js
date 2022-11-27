@@ -9,6 +9,7 @@ import { HomePage } from './pages/home.js';
 import { LoginPage } from './pages/login.js';
 import { RegisterPage } from './pages/register.js';
 import { ForgotPasswordPage } from './pages/forgot_password.js';
+import { ProfilePage } from './pages/profile.js';
 import { TestPage } from './pages/test.js';
 
 const Stack = createNativeStackNavigator();
@@ -65,6 +66,15 @@ const App = () => {
           component={ ForgotPasswordPage }
           options={{
             title: 'Elfelejtett jelszó'
+          }}
+          style={styles.element}
+          theme={NavigationTheme}
+        />
+        <Stack.Screen
+          name="Profil"
+          component={ ProfilePage }
+          options={{
+            title: 'Profil'
           }}
           style={styles.element}
           theme={NavigationTheme}
